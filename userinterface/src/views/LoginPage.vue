@@ -119,7 +119,7 @@ async function login() {
   while (isShowVCode.value) {
     await new Promise(resolve => setTimeout(resolve, 100))
   }
-  await router.push('/home')
+  await router.push('/upload')
 }
 </script>
 

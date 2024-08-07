@@ -20,10 +20,15 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/LoginPage.vue'),
     },
     {
-        path: '/home',
+        path: '/upload',
         // @ts-ignore
-        component: () => import('../views/HomePage.vue'),
-    }
+        component: () => import('../views/UploadPage.vue'),
+    },
+    {
+        path: '/evaluation',
+        // @ts-ignore
+        component: () => import('../views/EvaluationPage.vue'),
+    },
 ]
 
 const router: Router = createRouter({
