@@ -31,7 +31,6 @@
 </template>
 
 <script setup lang='ts'>
-
 import {DataLine, FirstAidKit, Memo, Picture} from '@element-plus/icons-vue'
 </script>
 
