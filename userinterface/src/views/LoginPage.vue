@@ -7,21 +7,23 @@
     <el-tabs v-model='activeName'>
       <el-tab-pane label='密码登录' name='PasswordLogin'>
         <!--suppress TypeScriptValidateTypes-->
-        <el-input size='large'
+        <el-input v-model='telephone'
+                  size='large'
                   placeholder='请输入手机号码'
                   :prefix-icon='Phone'
-                  style='padding-top: 6px'
+                  style='padding-top: 6px; width: 100%'
                   clearable>
           <template #prepend>中国 +86</template>
         </el-input>
 
         <!--suppress TypeScriptValidateTypes-->
-        <el-input type='password'
+        <el-input v-model='password'
+                  type='password'
                   size='large'
                   :prefix-icon='Lock'
                   placeholder='请输入密码'
                   autocomplete='off'
-                  style='padding-top: 20px'
+                  style='padding-top: 20px; width: 100%'
                   show-password/>
 
         <el-button type='primary'
@@ -34,18 +36,20 @@
 
       <el-tab-pane label='验证码登录' name='VerificationCodeLogin'>
         <!--suppress TypeScriptValidateTypes-->
-        <el-input size='large'
+        <el-input v-model='telephone'
+                  size='large'
                   placeholder='请输入手机号码'
                   :prefix-icon='Phone'
-                  style='padding-top: 6px'
+                  style='padding-top: 6px; width: 100%'
                   clearable>
           <template #prepend>中国 +86</template>
         </el-input>
 
         <!--suppress TypeScriptValidateTypes-->
-        <el-input size='large'
+        <el-input v-model='verificationCode'
+                  size='large'
                   :prefix-icon='CircleCheck'
-                  style='padding-top: 20px'
+                  style='padding-top: 20px; width: 100%'
                   placeholder='请输入短信验证码'
                   clearable>
           <template #append>
@@ -92,6 +96,9 @@ const activeName = ref('PasswordLogin')
 const countdown = ref(0)
 const buttonLabel = ref('获取短信验证码')
 const isShowVCode = ref(false)
+const telephone = ref('')
+const password = ref('')
+const verificationCode = ref('')
 
 watch(countdown, (newCount) => {
   if (newCount > 0) {

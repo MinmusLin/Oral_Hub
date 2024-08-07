@@ -25,7 +25,8 @@
     </div>
 
     <!--suppress TypeScriptValidateTypes-->
-    <el-input size='large'
+    <el-input v-model='userName'
+              size='large'
               :prefix-icon='Edit'
               placeholder='请输入姓名'
               autocomplete='off'
@@ -38,7 +39,8 @@
       <p>日期</p>
     </div>
 
-    <el-date-picker type='date'
+    <el-date-picker v-model='uploadDate'
+                    type='date'
                     placeholder='请选择上传日期'
                     :disabled-date='disabledDate'
                     style='width: 100%'
@@ -68,6 +70,8 @@ import {Calendar, Edit, MessageBox, Picture, Upload, User} from '@element-plus/i
 const images = ref([])
 const fileInput = ref(null)
 const router = useRouter()
+const userName = ref('')
+const uploadDate = ref('')
 
 const triggerFileInput = () => fileInput.value.click()
 
