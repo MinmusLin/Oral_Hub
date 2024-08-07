@@ -20,14 +20,9 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/LoginPage.vue'),
     },
     {
-        path: '/register',
+        path: '/home',
         // @ts-ignore
-        component: () => import('../views/RegisterPage.vue'),
-    },
-    {
-        path: '/reset-password',
-        // @ts-ignore
-        component: () => import('../views/ResetPasswordPage.vue'),
+        component: () => import('../views/HomePage.vue'),
     }
 ]
 
