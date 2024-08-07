@@ -46,7 +46,7 @@
                     :editable='false'
                     :clearable='false'/>
 
-    <el-button-group style='width: 100%; margin-top: 24px'>
+    <el-button-group style='width: 100%; margin-top: 24px; margin-bottom: 24px'>
       <!--suppress TypeScriptValidateTypes-->
       <el-button plain type='primary' size='large' :icon='MessageBox' style='width: 50%'>
         存草稿
