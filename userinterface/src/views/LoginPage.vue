@@ -73,7 +73,14 @@
       </el-tab-pane>
     </el-tabs>
 
-    <p style='font-size: 12px; color: #909399; padding-top: 6px'>未注册手机验证后自动登录</p>
+    <p style='font-size: 12px; color: #909399; padding-top: 6px'>
+      未注册手机验证后自动登录，注册即代表同意
+      <el-link type='primary'
+               @click='showUserAgreement=true'
+               style='margin: 0; padding: 0; font-size: 12px; transform: translateY(-1px) translateX(-3px)'>
+        用户协议与隐私政策
+      </el-link>
+    </p>
   </div>
 
   <Vcode :show='isShowVCode'
@@ -83,6 +90,17 @@
          successText='验证成功'
          failText='验证失败'
          sliderText='拖动滑块进行验证'/>
+
+  <el-dialog v-model='showUserAgreement'
+             title='用户协议与隐私政策'
+             style='width: 350px; height: 750px'
+             align-center
+             :close-on-click-modal='false'
+             :close-on-press-escape='false'>
+    <el-scrollbar height='680'>
+      <UserAgreement/>
+    </el-scrollbar>
+  </el-dialog>
 </template>
 
 <script setup lang='ts'>
@@ -90,6 +108,7 @@ import {useRouter} from 'vue-router'
 import {ref, watch} from 'vue'
 import Vcode from 'vue3-puzzle-vcode'
 import {Phone, Lock, CircleCheck} from '@element-plus/icons-vue'
+import UserAgreement from '../components/UserAgreement.vue'
 
 const router = useRouter()
 const activeName = ref('PasswordLogin')
@@ -99,6 +118,7 @@ const isShowVCode = ref(false)
 const telephone = ref('')
 const password = ref('')
 const verificationCode = ref('')
+const showUserAgreement = ref(false)
 
 watch(countdown, (newCount) => {
   if (newCount > 0) {

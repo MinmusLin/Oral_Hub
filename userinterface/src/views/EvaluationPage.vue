@@ -7,7 +7,7 @@
       <p>诊断图像</p>
     </div>
 
-    <img src='../assets/Demo.jpg' alt='Demo' class='evaluation-image'/>
+    <img src='../assets/PostProcessingDemo.png' alt='Demo' class='evaluation-image'/>
 
     <div class='title'>
       <el-icon :size='20'>
