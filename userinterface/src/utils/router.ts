@@ -12,23 +12,23 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/404',
         // @ts-ignore
-        component: () => import('../views/NotFoundPage.vue'),
+        component: () => import('../views/NotFoundPage.vue')
     },
     {
         path: '/login',
         // @ts-ignore
-        component: () => import('../views/LoginPage.vue'),
+        component: () => import('../views/LoginPage.vue')
     },
     {
         path: '/upload',
         // @ts-ignore
-        component: () => import('../views/UploadPage.vue'),
+        component: () => import('../views/UploadPage.vue')
     },
     {
         path: '/evaluation',
         // @ts-ignore
-        component: () => import('../views/EvaluationPage.vue'),
-    },
+        component: () => import('../views/EvaluationPage.vue')
+    }
 ]
 
 const router: Router = createRouter({
